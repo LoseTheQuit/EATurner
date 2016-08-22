@@ -1,0 +1,115 @@
+<!-- <div class="container-fluid"> -->
+<div class="container">
+    <div class="col-md-12">
+
+        <ul class="gallery gallery1">
+            <li ng-repeat="image in images">
+                <a ng-click="openLightboxModal($index)">
+                    <img ng-src="{{image.thumbUrl}}" class="img-thumbnail">
+                </a>
+            </li>
+        </ul>
+
+        <h1>Monthly Community Event Planner</h1>
+
+        <!-- <button class="btn btn-primary" ng-click="addCustom()">Custom Add</button> -->
+        <!-- <input ng-model="input"> -->
+
+        <md-input-container>
+            <label>SORT BY MONTH</label>
+            <md-select ng-model="event.date">
+                <md-option ng-value="opt" ng-click="sortByMonth('JAN')">JAN</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('FEB')">FEB</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('MAR')">MAR</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('APR')">APR</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('MAY')">MAY</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('JUN')">JUN</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('JUL')">JUL</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('AUG')">AUG</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('SEP')">SEP</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('OCT')">OCT</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('NOV')">NOV</md-option>
+                <md-option ng-value="opt" ng-click="sortByMonth('DEC')">DEC</md-option>
+            </md-select>
+        </md-input-container>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="4">Action</th>
+                <th colspan="4">Action</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td class="dropDownController">
+                    <md-datepicker ng-model="event.date" md-svg-icon="md-none" md-placeholder="Enter date"></md-datepicker>
+                </td>
+
+                <td colspan='2'>
+
+                    <input class="form-control" placeholder="Event:" ng-model="event.name">
+                </td>
+                <td>
+                    <input class="form-control" placeholder="Owner:" ng-model="event.owner">
+                </td>
+                <td>
+                    <md-button class="md-raised md-button-override-R" ng-click="add()">
+                        Add
+                    </md-button>
+                </td>
+                <td>
+                    <md-button class="md-raised md-button-override-R" ng-click="update()">
+                        Update
+                    </md-button>
+                </td>
+                <!--
+                <td>
+                    <button class="btn btn-info" ng-click="deselect()">
+                        Clear
+                    </button>
+                </td>
+                -->
+            </tr>
+        </thead>
+
+
+        <thead>
+            <tr>
+                <th>Date:
+                    <md-button class="md-raised md-button-override" ng-click="setOrder('date')">
+                        &and;
+                    </md-button>
+                    <md-button class="md-raised md-button-override" ng-click="setOrder('-date')">
+                        &or;
+                    </md-button>
+                </th>
+                <th>Day: </th>
+
+                <th>Event: </th>
+                <th>Owner: </th>
+                <th colspan="2">Action:</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="event in todo.data | orderBy:order" class="listItemContainer">
+                <td>{{event.date | date : format : timezone}}</td>
+
+                <td>{{event.date | date : 'EEE' }}</td>
+
+                <td>{{event.name}}</td>
+                <td>{{event.owner}}</td>
+                <td>
+                    <md-button class="md-raised md-button-override-R" ng-click="remove(event._id)">Remove</md-button>
+                </td>
+
+                <td>
+                    <md-button class="md-raised md-button-override-R" ng-click="edit(event._id)">Edit</md-button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
