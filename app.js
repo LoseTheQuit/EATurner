@@ -16,7 +16,7 @@ let fs = require('fs'),
 
 var client = new Client();
 
-let dbConnectionString = '';
+var dbConnectionString = '';
 
 var ignitionSwitch = true;
 
@@ -29,8 +29,18 @@ if (ignitionSwitch) {
     dbConnectionString = 'turner';
 }
 
+
 var db = mongojs(dbConnectionString, ['turner']);
 
+db.on('error', function (err) {
+    console.log('database error', err)
+})
+
+db.on('connect', function () {
+    console.log('database connected')
+})
+
+//db.turner.runCommand()
 
 app.use(cookieParser());
 
@@ -92,13 +102,13 @@ app.get('/outermost', function (req, res) {
 app.get('/turner', function (req, res) {
 
     console.log('\n');
-    console.log('******* INCOMING GET REQUEST - Load Template *******'.black.bgWhite);
+    console.log('******* turner - INCOMING GET REQUEST - Load Template *******'.black.bgWhite);
     console.log('\n');
 
     db.turner.find(function (err, docs) {
-        // console.log(docs)
+        console.log(err)
+        console.log(docs)
         res.json(docs)
-
     })
 
 });

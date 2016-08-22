@@ -24,7 +24,7 @@
     "instagram-node": "^0.5.8",
     "mongodb": "^2.2.5",
     "mongojs": "^2.4.0",
-    "mongoose": "^4.5.8",
+    "mongoose": "^4.5.9",
     "node-rest-client": "^1.8.0",
     "querystring": "^0.2.0",
     "request": "^2.72.0",
