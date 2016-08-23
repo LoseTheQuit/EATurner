@@ -16,6 +16,7 @@
     "angular-bootstrap-lightbox": "^0.12.0",
     "angular-material": "^1.1.0-rc4-master-06e7e99",
     "body-parser": "^1.15.0",
+    "bootstrap-material-design": "^0.5.10",
     "bower": "^1.7.9",
     "colors": "^1.1.2",
     "cookie-parser": "^1.4.1",

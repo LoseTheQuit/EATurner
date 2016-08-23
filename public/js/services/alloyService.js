@@ -19,4 +19,17 @@ app.service('alloyService', function ($http) {
 
     };
 
+    this.getTurnerWithQuery = function (query, callback) {
+        console.log("success from getHomeBrew");
+
+        $http({
+            url: '/query',
+            method: "POST",
+            data: query
+        })
+
+        .then(callback);
+
+    };
+
 });

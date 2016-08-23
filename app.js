@@ -30,7 +30,7 @@ if (ignitionSwitch) {
 }
 
 
-var db = mongojs(dbConnectionString, ['turner']);
+var db = mongojs(dbConnectionString, ['Titles']);
 
 db.on('error', function (err) {
     console.log('database error', err)
@@ -40,7 +40,31 @@ db.on('connect', function () {
     console.log('database connected')
 })
 
-//db.turner.runCommand()
+// db.turner.find().sort({name:1}, function(err, docs) {
+//     // docs is now a sorted array
+//       console.log(docs)
+// });
+//
+// db.turner.find().forEach(function(err, doc) {
+//     if (!doc) {
+//         // we visited all docs in the collection
+//         console.log(doc)
+//         return;
+//     }
+//     // doc is a document in the collection
+// });
+// db.stats(function (err, docs) {
+//     console.log("ERROR: " + err)
+//      console.log(docs)
+//     //res.json(docs)
+// })
+//
+// db.getCollectionNames(function (err, docs) {
+//     //console.log("ERROR: " + err)
+//      console.log(docs)
+//     //res.json(docs)
+// })
+// //db.turner.runCommand()
 
 app.use(cookieParser());
 
@@ -90,7 +114,7 @@ app.get('/outermost', function (req, res) {
     console.log('******* INCOMING GET REQUEST - Load Template *******'.black.bgWhite);
     console.log('\n');
 
-    db.turner.find().limit(1).sort({
+    db.Titles.find().limit(1).sort({
         _id: -1
     }, function (err, docs) {
         console.log(docs);
@@ -105,10 +129,35 @@ app.get('/turner', function (req, res) {
     console.log('******* turner - INCOMING GET REQUEST - Load Template *******'.black.bgWhite);
     console.log('\n');
 
-    db.turner.find(function (err, docs) {
-        console.log(err)
-        console.log(docs)
+
+    db.Titles.find(function (err, docs) {
+
+        console.log(Object.keys(docs));
+        //console.log(docs)
         res.json(docs)
     })
 
+});  
+
+app.post('/query', function (req, res) {
+
+
+    console.log('\n');
+    console.log('******* turner - INCOMING GET REQUEST - Load Template *******'.black.bgWhite);
+    console.log('\n');
+
+    console.log('req.body.q: ' + req.body.q)
+
+    var regex = new RegExp(".*" + req.body.q + ".*", "i");
+
+console.log(regex); // Hello this is !! some !! stuff.
+
+    db.Titles.find({
+        TitleName: regex
+    }, function (err, docs) {
+
+      console.log(Object.keys(docs));
+    //  console.log(docs)
+      res.json(docs)
+    });
 });

@@ -1,0 +1,156 @@
+<style>
+    .clearFloat {
+        clear: both;
+    }
+    
+    .cardHolder {
+        background: rgba(131, 131, 131, 0.5);
+        padding: 3%;
+        color: #fff;
+    }
+</style>
+
+<div class="bodyWrapper">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-xs-12">
+                <h3>EATurner:</h3>
+            </div>
+        </div>
+
+
+        <div class="clearFloat"></div>
+
+        <div class="card-columns">
+
+            <div ng-repeat="event in todo | orderBy:order">
+
+                <!-- ["Awards", "Genres", "OtherNames", "Participants", "ReleaseYear",
+                "Storylines", "TitleId", "TitleName", "TitleNameSortable", "_id"] -->
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+                            <h1>Awards</h1>
+
+                            <!-- <p>{{event.Awards | json}}</p> -->
+
+                            <div ng-repeat="award in event.Awards | orderBy:order" class="card-block">
+                                <p>{{award.AwardWon}}</p>
+                                <p>{{award.AwardYear}}</p>
+                                <p>{{award.Participants}}</p>
+                                <p>{{award.Award}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+
+                            <h1>Genres</h1>
+                            <div ng-repeat="genre in event.Genres | orderBy:order">
+                                <p>{{genre}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+                            <h1>Other Names</h1>
+
+                            <!-- <p>{{event.OtherNames | json}}</p> -->
+
+                            <div ng-repeat="oNames in event.OtherNames | orderBy:order">
+                                <p>{{oNames}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+                            <h1>Participants</h1>
+
+                            <p>{{event.Participants | json}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+                            <h1>Release Year</h1>
+
+                            <p>{{event.ReleaseYear | json}}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-block">
+
+                        <div class="cardHolder">
+                            <h1>Storylines</h1>
+
+                            <p>{{event.Storylines | json}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="cardHolder">
+                        <h1>TitleId</h1>
+
+                        <p>{{event.TitleId | json}}</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="cardHolder">
+                        <h1>TitleName</h1>
+
+                        <p>{{event.TitleName | json}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="cardHolder">
+                        <h1>TitleNameSortable</h1>
+
+                        <p>{{event.TitleNameSortable | json}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="cardHolder">
+                        <h1>_id</h1>
+
+                        <p>{{event._id | json}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
