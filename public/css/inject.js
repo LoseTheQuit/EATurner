@@ -64,25 +64,46 @@ export default StyleSheet.create({
         "wordWrap": "break-word"
     },
     "cardOverlay1": {
-        "background": "rgba(0, 107, 148, .75)"
+        "background": "rgba(0, 107, 148, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay2": {
-        "background": "rgba(0, 126, 173, .75)"
+        "background": "rgba(0, 126, 173, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay3": {
-        "background": "rgba(0, 144, 199, .75)"
+        "background": "rgba(0, 144, 199, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay4": {
-        "background": "rgba(0, 163, 224, .75)"
+        "background": "rgba(0, 163, 224, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay5": {
-        "background": "rgba(0, 182, 250, .75)"
+        "background": "rgba(0, 182, 250, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay6": {
-        "background": "rgba(20, 191, 255, .75)"
+        "background": "rgba(20, 191, 255, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "cardOverlay7": {
-        "background": "rgba(46, 198, 255, .75)"
+        "background": "rgba(46, 198, 255, .75)",
+        "border": 1,
+        "borderStyle": "solid",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "card": {
         "background": "rgba(0, 107, 148, .180)",
@@ -91,7 +112,8 @@ export default StyleSheet.create({
         "marginBottom": 30,
         "marginLeft": 0,
         "borderRadius": 0,
-        "color": "#fff"
+        "color": "#fff",
+        "borderColor": "rgba(256, 256, 256, .25)"
     },
     "theDividingLine": {
         "display": "block",
@@ -113,14 +135,5 @@ export default StyleSheet.create({
     },
     "theExceptionalP": {
         "lineHeight": 10
-    },
-    "amd-default-theme:not(md-button)": {
-        "color": "rgba(46, 198, 255, .5)"
-    },
-    "a:not(md-button)": {
-        "color": "rgba(46, 198, 255, .75)"
-    },
-    "a:not(md-button):hover": {
-        "color": "rgba(46, 198, 255, .5)"
     }
 });

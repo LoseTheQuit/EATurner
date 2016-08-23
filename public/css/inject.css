@@ -97,24 +97,45 @@ h2 {
 }
 .cardOverlay1 {
     background: rgba(0, 107, 148, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay2 {
     background: rgba(0, 126, 173, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay3 {
     background: rgba(0, 144, 199, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay4 {
     background: rgba(0, 163, 224, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay5 {
     background: rgba(0, 182, 250, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay6 {
-    background: rgba(20, 191, 255, .75)
+    background: rgba(20, 191, 255, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .cardOverlay7 {
-    background: rgba(46, 198, 255, .75)
+    background: rgba(46, 198, 255, .75);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(256, 256, 256, .25);
 }
 .card {
     background: rgba(0, 107, 148, .25);
@@ -179,9 +200,6 @@ h2 {
 
 /**/
 
-a.md-default-theme:not(.md-button), a:not(.md-button) {
-    color: rgba(46, 198, 255, .75)
-}
-a.md-default-theme:not(.md-button), a:not(.md-button):hover {
-    color: rgba(46, 198, 255, .5)
+.card {
+    border-color: rgba(256, 256, 256, .25);
 }
