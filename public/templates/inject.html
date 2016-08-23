@@ -3,15 +3,20 @@
 <div class="bodyOverlay">
 
 
-    <h4><a href="#" ng-click="showDetails = ! showDetails">{{procedure.definition}}</a></h4>
 
     <div class="container">
 
 
         <div class="col-xl-2  col-lg-12 col-md-12" class="navbar navbar-inverse">
             <div data-spy="affix">
-                <h3 class="robotoh3">Search By Title:</h3>
-                <input placeholder="search#" type="text" class="form-control" ng-model-options='{ debounce: 250 }' class="inputBox" ng-model="titleSearchQuery" ng-change="turnerTitleSearch()">
+
+
+                <div>
+
+                    <h3 class="robotoh3">View this project on </h3>
+                    <h1><a href="https://github.com/LoseTheQuit/EATurner" target="_blank">GitHub</a></h1>
+                </div>
+                <input placeholder="search by title" type="text" class="form-control" ng-model-options='{ debounce: 250 }' class="inputBox" ng-model="titleSearchQuery" ng-change="turnerTitleSearch()">
             </div>
         </div>
 

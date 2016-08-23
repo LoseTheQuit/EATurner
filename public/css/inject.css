@@ -176,3 +176,12 @@ h2 {
 .theExceptionalP {
     line-height: 10px;
 }
+
+/**/
+
+a.md-default-theme:not(.md-button), a:not(.md-button) {
+    color: rgba(46, 198, 255, .75)
+}
+a.md-default-theme:not(.md-button), a:not(.md-button):hover {
+    color: rgba(46, 198, 255, .5)
+}

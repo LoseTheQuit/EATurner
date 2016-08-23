@@ -113,5 +113,14 @@ export default StyleSheet.create({
     },
     "theExceptionalP": {
         "lineHeight": 10
+    },
+    "amd-default-theme:not(md-button)": {
+        "color": "rgba(46, 198, 255, .5)"
+    },
+    "a:not(md-button)": {
+        "color": "rgba(46, 198, 255, .75)"
+    },
+    "a:not(md-button):hover": {
+        "color": "rgba(46, 198, 255, .5)"
     }
 });
