@@ -132,12 +132,13 @@ app.get('/turner', function (req, res) {
 
     db.Titles.find(function (err, docs) {
 
-        console.log(Object.keys(docs));
+        //console.log(Object.keys(docs));
         //console.log(docs)
+
         res.json(docs)
     })
 
-});  
+});
 
 app.post('/query', function (req, res) {
 
@@ -150,14 +151,15 @@ app.post('/query', function (req, res) {
 
     var regex = new RegExp(".*" + req.body.q + ".*", "i");
 
-console.log(regex); // Hello this is !! some !! stuff.
+    console.log(regex); // Hello this is !! some !! stuff.
 
     db.Titles.find({
         TitleName: regex
     }, function (err, docs) {
 
-      console.log(Object.keys(docs));
-    //  console.log(docs)
+      //console.log(Object.keys(docs));
+      //console.log(docs)
+
       res.json(docs)
     });
 });

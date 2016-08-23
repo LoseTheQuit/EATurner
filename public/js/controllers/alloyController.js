@@ -1,6 +1,9 @@
 'use strict';
 
 console.log("OUTSIDE: alloy Controller");
+
+
+
 app.filter('prettyJSON', function () {
     function prettyPrintJson(json) {
         return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
@@ -8,7 +11,10 @@ app.filter('prettyJSON', function () {
     return prettyPrintJson;
 });
 app.controller('alloyController', function ($scope, $http, alloyService) {
-
+  $scope.theRemoverr = function extractText( str ){
+   var m = str.match(/(?:"[^"]*"|^[^"]*$)/)[0].replace(/"/g, "");
+    return m;
+  };
     console.log("INSIDE: alloy Controller");
 
     $scope.refresh = function () {

@@ -6,26 +6,36 @@ const {width, height, scale} = Dimensions.get("window"),
     vmax = Math.max(vw, vh);
 
 export default StyleSheet.create({
+    "html": {
+        "color": "#fff",
+        "fontFamily": "'Roboto', sans-serif",
+        "background": "#1e5799",
+        "filter": "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#017bbc', GradientType=0)",
+        "height": "auto"
+    },
     "body": {
         "color": "#fff",
         "fontFamily": "'Roboto', sans-serif",
-        "background": "linear-gradient(to bottom, #1e5799 0%, #27a2f4 21%, #2085c9 48%, #21b8d3 77%, #017bbc 100%)",
+        "background": "#1e5799",
         "filter": "progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#017bbc', GradientType=0)",
         "height": "auto"
     },
     "bodyOverlay": {
-        "width": "100%",
-        "height": "auto",
         "position": "sticky",
         "WebkitAnimation": "fgMove 500s infinite",
         "animation": "fgMove 500s infinite",
         "background": "url('../img/customJumbotronoverlay.svg')",
         "backgroundSize": "cover",
+        "width": "100%",
+        "height": "auto",
         "minHeight": 3000
     },
     "h2": {
         "fontWeight": "300",
         "fontSize": 67
+    },
+    "cardHeaderSpacing": {
+        "marginBottom": 100
     },
     "robotoh1": {
         "fontWeight": "300",
@@ -83,17 +93,6 @@ export default StyleSheet.create({
         "borderRadius": 0,
         "color": "#fff"
     },
-    "stickySideBar": {
-        "position": "sticky"
-    },
-    "sticky": {
-        "top": 0,
-        "position": "fixed"
-    },
-    "affix": {
-        "top": 20,
-        "position": "fixed"
-    },
     "theDividingLine": {
         "display": "block",
         "height": 3,
@@ -106,5 +105,13 @@ export default StyleSheet.create({
         "paddingBottom": "3%",
         "paddingLeft": "3%",
         "background": "rgba(0, 0, 0, .005)"
+    },
+    "theWire": {
+        "background": "rgba(0, 172, 0, .5)",
+        "width": "100%",
+        "height": "100%"
+    },
+    "theExceptionalP": {
+        "lineHeight": 10
     }
 });
